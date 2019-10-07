@@ -1,0 +1,19 @@
+) Diferencie interfaces públicas de interfaces publicadas e justifique por que interfaces publicadas não devem ser refatoradas.
+
+      R: interfaces publicas são interfaces em que a operação de refatoração e feita e pode haver mudanças em todo o codigo para se adequar,
+         ja as interfaces publicadas são um passo além da publicas, onde nem sempre quem está refatorando tem acesso a todo o código, 
+         podendo causar erros na aplicação cliente por isso as interfaces publicadas não devem ser refatoradas.
+
+
+b) Qual a diferença entre os maus cheiros "Cirurgia com rifle" e "Mudanças divergentes". Responda informando claramente os princípios de projetos que estão sendo violados em cada um dos maus-cheiros.
+
+    R: Mudanças divergentes - uma classe que sofre várias mudanças. Pode indicar existência de código duplicado.
+       Cirurgia com Rifle - refere-se a uma mudança que afeta várias classes. Pode indicar que muitas classes dividem uma mesma responsabilidade.
+
+c) Refatoração sempre leva a projetos mais eficientes em termo de desempenho. A afirmativa é verdadeira ou falsa? Justifique.
+
+    R: Falsa. Nem sempre leva a projetos mais eficientes. o objetivo da refatoração nem sempre e ganhar desempenho, a refatoração traz eficiência em outros aspectos.
+
+d) Como se tem a garantia de que uma refatoração teve sucesso?
+
+    R: É preciso a garantia que os testos que obtiam sucesso antes da refatoração continuem obtendo sucesso ao fim da refatoração.
