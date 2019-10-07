@@ -10,15 +10,20 @@ public class Turma {
 
 	public Turma(char codigo, int numVagas, String descricao) throws DadosTurmaIncompletosException {
 		if (codigo == 0 || numVagas <= 0) {
-			StringBuilder builder = new StringBuilder(); 
-			builder.append("Dados informados para turma estao incompletos. ");
-			builder.append(codigo == 0 ? "Codigo: " + codigo : "");
-			builder.append(numVagas <=0 ? "Numero de vagas: " + numVagas : "");
+			StringBuilder builder = getBuilder(codigo, numVagas);
 			throw new DadosTurmaIncompletosException( builder.toString() );
 		}
 		this.codigo = codigo; 
 		this.numVagas = numVagas;
 		this.descricao = descricao;
+	}
+
+	private StringBuilder getBuilder(char codigo, int numVagas) {
+		StringBuilder builder = new StringBuilder(); 
+		builder.append("Dados informados para turma estao incompletos. ");
+		builder.append(codigo == 0 ? "Codigo: " + codigo : "");
+		builder.append(numVagas <=0 ? "Numero de vagas: " + numVagas : "");
+		return builder;
 	}
 
 	public static Turma obterTurma(char codigo, int numVagas, String descricao) throws DadosTurmaIncompletosException {
